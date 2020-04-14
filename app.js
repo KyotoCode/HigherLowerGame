@@ -82,30 +82,24 @@ function x(e){
 }
 function highFun(e){
   if(rand1.value >= rand.value){
-    tf.textContent = 'Good Job ' + rand1.name + ' is bigger than ' + rand.name;
-    win();
+    tf.textContent = 'Good Job ' + rand1.name + ' has bigger population than ' + rand.name;
+    guess++;
   }else{
-    tf.textContent = 'Sorry ' + rand1.name + ' is smaller than ' + rand.name; 
+    tf.textContent = 'Sorry ' + rand1.name + ' has lower population than ' + rand.name; 
     gameOver();
   };
   e.preventDefault();
 }
-
 function lowFun(e){
   if(rand1.value <= rand.value){
-    tf.textContent = 'Good Job ' + rand1.name + ' is smaller than ' + rand.name;
-    win();
+    tf.textContent = 'Good Job ' + rand1.name + ' has lower population than ' + rand.name;
+    guess++;
   }else{
-    tf.textContent = 'Sorry ' + rand1.name + ' is bigger than ' + rand.name; 
+    tf.textContent = 'Sorry ' + rand1.name + ' has bigger population than ' + rand.name; 
     gameOver();
   };
   e.preventDefault();
 }
-
-function win(){
-  guess += 1;
-}
-
 function gameOver(){
   ref.textContent = 'Start Over';
   ref.id = 'play-again';
